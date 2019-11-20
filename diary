@@ -1,0 +1,8 @@
+#!/bin/sh
+DIARY_PATH=~/note/diary/
+ORIGINAL_FILE="`ls -1 $DIARY_PATH | sort | tail -1`"
+ORIGINAL_DATE=${ORIGINAL_FILE:0:8}
+NEW_DATE="`date -v+1d -j -f "%Y%m%d" $ORIGINAL_DATE "+%Y%m%d"`"
+NEW_FILE=$NEW_DATE".md"
+cp -n $DIARY_PATH$ORIGINAL_FILE $DIARY_PATH$NEW_FILE
+vim $DIARY_PATH$NEW_FILE
