@@ -1,5 +1,5 @@
-#!/bin/sh
-DIARY_PATH=~/note/diary/
+#!/bin/bash
+DIARY_PATH=$HOME/note/diary/
 ORIGINAL_FILE="`ls -1 $DIARY_PATH | sort | tail -1`"
 ORIGINAL_DATE=${ORIGINAL_FILE:0:8}
 NEW_DATE="`date -v+1d -j -f "%Y%m%d" $ORIGINAL_DATE "+%Y%m%d"`"
